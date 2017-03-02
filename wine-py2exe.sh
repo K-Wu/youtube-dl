@@ -16,8 +16,8 @@ if [ ! -d wine-py2exe ]; then
     cd wine-py2exe
     export WINEPREFIX=`pwd`
 
-    axel -a "http://www.python.org/ftp/python/2.7/python-2.7.msi"
-    axel -a "http://downloads.sourceforge.net/project/py2exe/py2exe/0.6.9/py2exe-0.6.9.win32-py2.7.exe"
+    wget "http://www.python.org/ftp/python/2.7/python-2.7.msi"
+    wget "http://downloads.sourceforge.net/project/py2exe/py2exe/0.6.9/py2exe-0.6.9.win32-py2.7.exe"
     #axel -a "http://winetricks.org/winetricks"
 
     # http://appdb.winehq.org/objectManager.php?sClass=version&iId=21957
