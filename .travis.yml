@@ -8,4 +8,5 @@ python:
   - "3.5"
   - "3.6"
 sudo: required
-script: ./wine-py2exe.sh
+script:
+- "sudo ./wine-py2exe.sh"
