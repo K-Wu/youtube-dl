@@ -7,16 +7,5 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-sudo: false
-env:
-  - YTDL_TEST_SET=core
-  - YTDL_TEST_SET=download
-script: ./devscripts/run_tests.sh
-notifications:
-  email:
-    - filippo.valsorda@gmail.com
-    - yasoob.khld@gmail.com
-#  irc:
-#    channels:
-#      - "irc.freenode.org#youtube-dl"
-#    skip_join: true
+sudo: required
+script: ./wine-py2exe.sh
