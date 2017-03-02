@@ -25,7 +25,7 @@ if [ ! -d wine-py2exe ]; then
     wine msiexec /i python-3.3.5.msi
     
     echo "Follow py2exe setup on screen"
-    wine py2exe-0.9.2.0.win32.exe
+    wine py2exe-0.9.2.0.win32.exe /quiet
     
     #echo "Follow Microsoft Visual C++ 2008 Redistributable Package setup on screen"
     #bash winetricks vcrun2008
