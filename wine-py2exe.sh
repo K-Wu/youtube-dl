@@ -17,15 +17,16 @@ if [ ! -d wine-py2exe ]; then
     export WINEPREFIX=`pwd`
 
     wget "https://www.python.org/ftp/python/3.3.5/python-3.3.5.msi"
-    wget "https://pypi.python.org/packages/34/71/f723db60d8ab016943c7e063481d2eec7841ae582a14947aebec55998462/py2exe-0.9.2.0.win32.exe"
+    git clone https://github.com/lambacck/py2exe-3.git
     #axel -a "http://winetricks.org/winetricks"
 
     # http://appdb.winehq.org/objectManager.php?sClass=version&iId=21957
     echo "Follow python setup on screen"
     wine msiexec /i python-3.3.5.msi
+    wine "C:\\Python33\\python.exe" py2exe-3/setup.py install
     
     echo "Follow py2exe setup on screen"
-    wine py2exe-0.9.2.0.win32.exe /quiet
+    
     
     #echo "Follow Microsoft Visual C++ 2008 Redistributable Package setup on screen"
     #bash winetricks vcrun2008
@@ -49,7 +50,7 @@ else
 
 fi
 
-wine "C:\\Python27\\python.exe" "$1" py2exe > "py2exe.log" 2>&1 || true
+wine "C:\\Python33\\python.exe" "$1" py2exe > "py2exe.log" 2>&1 || true
 #echo '# Copying python27.dll' >> "py2exe.log"
 #cp "$WINEPREFIX/drive_c/windows/system32/python27.dll" build/bdist.win32/winexe/bundle-2.7/
-wine "C:\\Python27\\python.exe" "$1" py2exe >> "py2exe.log" 2>&1
+wine "C:\\Python33\\python.exe" "$1" py2exe >> "py2exe.log" 2>&1
