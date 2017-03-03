@@ -23,8 +23,9 @@ if [ ! -d wine-py2exe ]; then
     # http://appdb.winehq.org/objectManager.php?sClass=version&iId=21957
     echo "Follow python setup on screen"
     wine msiexec /i python-3.3.5.msi
-    wine "C:\\Python33\\python.exe" py2exe-3/setup.py install
-    
+    cd py2exe-3
+    wine "C:\\Python33\\python.exe" setup.py install
+    cd ..
     echo "Follow py2exe setup on screen"
     
     
